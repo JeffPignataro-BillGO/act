@@ -334,6 +334,8 @@ func defaultImageSurvey(actrc string) error {
 		option = "-P ubuntu-latest=node:16-buster-slim\n-P ubuntu-20.04=node:16-buster-slim\n-P ubuntu-18.04=node:16-buster-slim\n"
 	}
 
+	option += "-v /usr/local/share/ca-certificates/extra/ZscalerRootCertificate-2048-SHA256.crt:/etc/ssl/certs/ZscalerRootCertificate-2048-SHA256.crt\n"
+
 	f, err := os.Create(actrc)
 	if err != nil {
 		return err
